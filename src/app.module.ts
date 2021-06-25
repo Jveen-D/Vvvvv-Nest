@@ -6,9 +6,11 @@ import {CatsModule} from './cats/cats.module';
 import {DogsController} from './dogs/dogs.controller'
 import {DogsService} from './dogs/dogs.service'
 import {DogsModule} from './dogs/dogs.module';
+import { ConfigModule } from './config/config.module';
+
 
 @Module({
-    imports: [CatsModule, DogsModule],
+    imports: [CatsModule, DogsModule, ConfigModule,ConfigModule.register({ folder: './config' })],
     controllers: [CatsController,DogsController],
     providers: [CatsService,DogsService],
 })
